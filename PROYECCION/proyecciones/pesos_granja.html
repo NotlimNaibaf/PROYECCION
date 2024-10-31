@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block titulo %}Pesos de Granja{% endblock %}
+{% block contenido %}
+<h2>Peso de Granja</h2>
+    <table class="table table-striped datatable">
+        <thead>
+            <tr>
+                <th>galpon</th>
+                <th>genetica</th>
+                <th>sexo</th>
+                <th>clima</th>
+                <th>edad</th>
+                <th>peso0</th>
+                <th>peso7</th>
+                <th>peso14</th>
+                <th>peso21</th>
+                <th>peso28</th>
+                <th>peso35</th>
+                <th>pesomonit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proyecciones in pesos_granja %}
+                <tr>
+                    <td>{{ proyecciones.galpon }}</td>
+                    <td>{{ proyecciones.genetica }}</td>
+                    <td>{{ proyecciones.sexo }}</td>
+                    <td>{{ proyecciones.clima }}</td>
+                    <td>{{ proyecciones.edad }}</td>
+                    <td>{{ proyecciones.peso0 }}</td>
+                    <td>{{ proyecciones.peso7 }}</td>
+                    <td>{{ proyecciones.peso14 }}</td>
+                    <<td>{{ proyecciones.peso14 }}</td>
+                    <td>{{ proyecciones.peso21 }}</td>
+                    <td>{{ proyecciones.peso28 }}</td>
+                    <td>{{ proyecciones.peso35 }}</td>
+                    <td>{{ proyecciones.pesomonit }}</td>
+                    
+                    <td><a href="{% url 'grafico' dato.pk %}" class="btn btn-primary btn-sm">Ver Graficos</a> </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="13">No hay datos para graficar.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
