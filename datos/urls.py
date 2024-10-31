@@ -9,7 +9,7 @@ urlpatterns = [
 
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
-    path('Datos/<int:pk>/', DetalleDatoView.as_view(), name='graficos'),
+    path('', DetalleDatoView.as_view(), name='graficos'),
 
 
    ]

@@ -13,7 +13,7 @@ from datos.models import Datos
 
 class ListaDatoView(LoginRequiredMixin, ListView):
     model = Datos
-    template_name = 'pesos_granja.html'
+    template_name = 'proyecciones/pesos_granja.html'
 
     context_object_name = 'datos'
 
@@ -25,7 +25,7 @@ class ListaDatoView(LoginRequiredMixin, ListView):
 
 class DetalleDatoView(LoginRequiredMixin, DetailView):
     model = Datos
-    template_name = 'graficos.html'
+    template_name = 'proyecciones/graficos.html'
     context_object_name = 'datos'
 
 
