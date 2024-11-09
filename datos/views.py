@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, ListView, DetailView
@@ -17,10 +17,28 @@ class ListaDatoView(LoginRequiredMixin, ListView):
 
     context_object_name = 'datos'
 
-    def get_queryset(self):
-        if self.request.user.rol == 'admin':
-            return Datos.objects.all()
-        return Datos.objects.filter(estado=True)
+    class ListaDatoView(LoginRequiredMixin, View):
+        model = Datos
+        template_name = 'proyecciones/pesos_granja.html'
+        data = {}
+        context_object_name = 'datos'
+
+        def get_queryset(self):
+            error = 0/0
+            if self.request.user.rol == 'admin':
+                return Datos.objects.all()
+
+            return Datos.objects.filter(estado=True)
+
+        def post(self, request):
+            error = 0 / 0
+            if request.user.rol == 'admin':
+                self.data = {
+                    "Datos": Datos.objects.all(),
+                    "proyecciones": {}
+                }
+
+            return render(request, self.template_name, self.data)
 
 
 class DetalleDatoView(LoginRequiredMixin, DetailView):

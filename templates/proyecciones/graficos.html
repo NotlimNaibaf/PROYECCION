@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
-{% block titulo %}{{ proyecciones.nombre }}{% endblock %}
+{% block titulo %}{{ datos.nombre }}{% endblock %}
 {% block contenido %}
+<h2>Graficos de proyeccion/h2>    
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">{{ proyecciones.nombre }}</h2>
-        <p class="card-text">{{ proyecciones.descripcion }}</p>
+        <h2 class="card-title">{{ datos.nombre }}</h2>
+        <p class="card-text">{{ datos.descripcion }}</p>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Galpon:</strong>{{ proyecciones.galpon }}</li>
-            <li class="list-group-item"><strong>Genetica:</strong>{{ proyecciones.genetica }}</li>
+            <li class="list-group-item"><strong>Galpon:</strong>{{ datos.galpon }}</li>
+            <li class="list-group-item"><strong>Genetica:</strong>{{ datos.genetica }}</li>
             <li class="list-group-item"><strong>Sexo:</strong>{{ proyecciones.sexo }}</li>
             <li class="list-group-item"><strong>Clima:</strong>{{ proyecciones.clima }}</li>
             <li class="list-group-item"><strong>Edad:</strong>{{ proyecciones.edad }}</li>
