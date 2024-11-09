@@ -9,7 +9,7 @@ urlpatterns = [
     path('', include('datos.urls')),
     path('proyecciones/', ListaDatoView.as_view(), name='pesos_granja'),
     path('proyecciones/', DetalleDatoView.as_view(), name='graficos'),
-    path('login/', CustomLoginView.as_view(), name='login'),
+    path('/accounts/login/', CustomLoginView.as_view(), name='login'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
     path('registro/', RegistroUsuarioView.as_view(), name='registro'),
 

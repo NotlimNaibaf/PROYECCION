@@ -37,10 +37,5 @@ class DatosForm(BootstrapFormMixin, forms.ModelForm):
         model = Datos
         fields = ['galpon', 'genetica', 'sexo', 'clima', 'edad', 'peso0', 'peso7', 'peso14', 'peso21', 'peso28', 'peso35', 'pesomonit']
 
-        widgets = {
-            'galpon': forms.DateInput(attrs={'type': 'date'}),
-            'genetica': forms.DateInput(attrs={'type': 'date'}),
-            'sexo': forms.DateInput(attrs={'type': 'date'}),
-            'clima': forms.DateInput(attrs={'type': 'date'}),
 
-        }
+
