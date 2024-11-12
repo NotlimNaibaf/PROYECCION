@@ -17,28 +17,13 @@ class ListaDatoView(LoginRequiredMixin, ListView):
 
     context_object_name = 'datos'
 
-    class ListaDatoView(LoginRequiredMixin, View):
-        model = Datos
-        template_name = 'proyecciones/pesos_granja.html'
-        data = {}
-        context_object_name = 'datos'
+    def get_queryset(self):
+        datos = Datos.objects.all()
 
-        def get_queryset(self):
-            error = 0/0
-            if self.request.user.rol == 'admin':
-                return Datos.objects.all()
+        if self.request.user.rol == 'admin':
+            return datos.values()
 
-            return Datos.objects.filter(estado=True)
-
-        def post(self, request):
-            error = 0 / 0
-            if request.user.rol == 'admin':
-                self.data = {
-                    "Datos": Datos.objects.all(),
-                    "proyecciones": {}
-                }
-
-            return render(request, self.template_name, self.data)
+        return None
 
 
 class DetalleDatoView(LoginRequiredMixin, DetailView):
@@ -47,13 +32,13 @@ class DetalleDatoView(LoginRequiredMixin, DetailView):
     context_object_name = 'datos'
 
 
-
 class CustomLoginView(LoginView):
     template_name = 'registro/login.html'
 
     def form_invalid(self, form):
         messages.error(self.request, 'Usuario o contraseña incorrectos. Por favor, ingrese nuevamente.')
         return super().form_invalid(form)
+
 
 class CustomLogoutView(View):
     def get(self, request):
@@ -64,7 +49,6 @@ class CustomLogoutView(View):
         response['Pragma'] = 'no-cache'
         response['Expires'] = '0'
         return response
-
 
 
 class RegistroUsuarioView(CreateView):
