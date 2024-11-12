@@ -9,7 +9,7 @@
                 <th>Genética</th>
                 <th>Sexo</th>
                 <th>Clima</th>
-                <th>Edad</th>
+                <th>Lote</th>
                 <th>Peso 0</th>
                 <th>Peso 7</th>
                 <th>Peso 14</th>
@@ -21,21 +21,25 @@
             </tr>
         </thead>
         <tbody>
-            {% for datos in Datos %}
+            {% for dato in datos %}
                 <tr>
-                    <td>{{ datos.galpon }}</td>
-                    <td>{{ datos.genetica }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.clima }}</td>
-                    <td>{{ datos.edad }}</td>
-                    <td>{{ datos.peso0 }}</td>
-                    <td>{{ datos.peso7 }}</td>
-                    <td>{{ datos.peso14 }}</td>
-                    <td>{{ Datoss.peso21 }}</td>
-                    <td>{{ datos.peso28 }}</td>
-                    <td>{{ datos.peso35 }}</td>
-                    <td>{{ datos.pesomonit }}</td>
-                    <td><a href="{% url 'grafico' datos %}" class="btn btn-primary btn-sm">Ver Gráficos</a></td>
+                    <td>{{ dato.galpon }}</td>
+                    <td>{{ dato.genetica }}</td>
+                    <td>{{ dato.sexo }}</td>
+                    <td>{{ dato.clima }}</td>
+                    <td>{{ dato.edad }}</td>
+                    <td>{{ dato.peso0 }}</td>
+                    <td>{{ dato.peso7 }}</td>
+                    <td>{{ dato.peso14 }}</td>
+                    <td>{{ dato.peso21 }}</td>
+                    <td>{{ dato.peso28 }}</td>
+                    <td>{{ dato.peso35 }}</td>
+                    <td>{{ dato.pesomonit }}</td>
+                    
+                    {# <td><a href="{% url 'grafico' dato.id %}" class="btn btn-primary btn-sm">Ver Gráficos</a></td> #}
+                    <td><a  class="btn btn-primary btn-sm">Ver Gráficos</a></td>
+
+
                 </tr>
             {% empty %}
                 <tr>

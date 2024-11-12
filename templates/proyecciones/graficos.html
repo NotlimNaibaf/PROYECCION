@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
-{% block titulo %}{{ datos.nombre }}{% endblock %}
+{% block titulo %}{{ dato.nombre }}{% endblock %}
 {% block contenido %}
 <h2>Graficos de proyeccion/h2>    
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">{{ datos.nombre }}</h2>
-        <p class="card-text">{{ datos.descripcion }}</p>
+        <h2 class="card-title">{{ dato.nombre }}</h2>
+        <p class="card-text">{{ dato.descripcion }}</p>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Galpon:</strong>{{ datos.galpon }}</li>
-            <li class="list-group-item"><strong>Genetica:</strong>{{ datos.genetica }}</li>
-            <li class="list-group-item"><strong>Sexo:</strong>{{ proyecciones.sexo }}</li>
-            <li class="list-group-item"><strong>Clima:</strong>{{ proyecciones.clima }}</li>
-            <li class="list-group-item"><strong>Edad:</strong>{{ proyecciones.edad }}</li>
-            <li class="list-group-item"><strong>0 dias:</strong>{{ proyecciones.peso0 }}</li>
-            <li class="list-group-item"><strong>7 dias:</strong>{{ proyecciones.peso7 }}</li>
-            <li class="list-group-item"><strong>14 dias:</strong>{{ proyecciones.peso14 }}</li>
-            <li class="list-group-item"><strong>21 dias:</strong>{{ proyecciones.peso21 }}</li>
-            <li class="list-group-item"><strong>28 dias:</strong>{{ proyecciones.peso28 }}</li>
-            <li class="list-group-item"><strong>35 dias:</strong>{{ proyecciones.peso35 }}</li>
-            <li class="list-group-item"><strong>42 dias:</strong>{{ proyecciones.pesomonit }}</li>
+            <li class="list-group-item"><strong>Galpon:</strong>{{ dato.galpon }}</li>
+            <li class="list-group-item"><strong>Genetica:</strong>{{ dato.genetica }}</li>
+            <li class="list-group-item"><strong>Sexo:</strong>{{ dato.sexo }}</li>
+            <li class="list-group-item"><strong>Clima:</strong>{{ dato.clima }}</li>
+            <li class="list-group-item"><strong>Edad:</strong>{{ dato.edad }}</li>
+            <li class="list-group-item"><strong>0 dias:</strong>{{ dato.peso0 }}</li>
+            <li class="list-group-item"><strong>7 dias:</strong>{{ dato.peso7 }}</li>
+            <li class="list-group-item"><strong>14 dias:</strong>{{ dato.peso14 }}</li>
+            <li class="list-group-item"><strong>21 dias:</strong>{{ dato.peso21 }}</li>
+            <li class="list-group-item"><strong>28 dias:</strong>{{ dato.peso28 }}</li>
+            <li class="list-group-item"><strong>35 dias:</strong>{{ dato.peso35 }}</li>
+            <li class="list-group-item"><strong>42 dias:</strong>{{ dato.pesomonit }}</li>
 
 
         </ul>
